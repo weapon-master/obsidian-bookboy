@@ -4,7 +4,6 @@ import { EpubView, EPUB_VIEW_TYPE } from './EpubView';
 export default class BookboyPlugin extends Plugin {
   async onload() {
     console.log('loading plugin bookboy !!!');
-    
     // Register view type
     this.registerView(
       EPUB_VIEW_TYPE,
