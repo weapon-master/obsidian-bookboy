@@ -6,3 +6,46 @@ available in the app when your plugin is enabled.
 If your plugin does not need CSS, delete this file.
 
 */
+
+.epub-container {
+  background-color: var(--background-primary);
+  padding: 20px;
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.epub-container iframe {
+  background-color: white;
+  flex: 1;
+  border: none;
+}
+
+.epub-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.epub-nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  gap: 10px;
+}
+
+.epub-nav-button {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.epub-nav-button:hover {
+  opacity: 0.9;
+}
