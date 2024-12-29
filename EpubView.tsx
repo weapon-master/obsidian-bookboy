@@ -13,8 +13,9 @@ export class EpubView extends ItemView {
 	book: any;
 	rendition: any;
 
-	constructor(leaf: WorkspaceLeaf) {
+	constructor(leaf: WorkspaceLeaf, private vault: any) {
 		super(leaf);
+		this.vault = vault;
 	}
 
 	getViewType(): string {
@@ -56,14 +57,13 @@ export class EpubView extends ItemView {
 		this.root = createRoot(this.contentEl);
 		try {
 			const file = this.app.vault.getAbstractFileByPath(filePath);
-			console.log("file", file);
 			if (!file || !(file instanceof TFile)) {
 				console.error("File not found:", filePath);
 				return;
 			}
 			const fileContent = await this.readFileAsBlob(file);
 			const bookPath = URL.createObjectURL(fileContent);
-			this.root.render(<EpubReader path={bookPath} />);
+			this.root.render(<EpubReader path={bookPath} vault={this.vault} />);
 		} catch (error) {
 			console.error("Error rendering EPUB:", error);
 		}

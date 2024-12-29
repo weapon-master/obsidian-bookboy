@@ -7,7 +7,7 @@ export default class BookboyPlugin extends Plugin {
     // Register view type
     this.registerView(
       EPUB_VIEW_TYPE,
-      (leaf: WorkspaceLeaf) => new EpubView(leaf)
+      (leaf: WorkspaceLeaf) => new EpubView(leaf, this.app.vault)
     );
 
     // Register extension handler

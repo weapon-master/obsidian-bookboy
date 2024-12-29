@@ -1,0 +1,27 @@
+.epub-reader-container {
+    position: relative;
+    height: 100%;
+}
+
+.color-popover {
+    background-color: var(--background-primary);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    padding: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+.color-button {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: none;
+    margin: 0 4px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.color-button:hover {
+    transform: scale(1.1);
+}
